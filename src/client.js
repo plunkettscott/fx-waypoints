@@ -30,10 +30,6 @@ function DisplayHelpText(str) {
     EndTextCommandDisplayHelp(0, 0, 1, -1)
 }
 
-onNet('Waypoints:Test', (d) => {
-    SetEntityCoords(PlayerPedId(), 1088.75, -3187.95, -39.005)
-})
-
 onNet('Waypoints:YamlParsed', (data) => {
     waypointReceived = true
     waypointData = JSON.parse(data)

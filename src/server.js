@@ -8,10 +8,6 @@ on('onResourceStart', async (resourceName) => {
         return
     }
 
-    RegisterCommand('test', () => {
-        emitNet('Waypoints:Test', -1)
-    })
-
     RegisterCommand('loadwp', () => {
         emitNet('Waypoints:YamlParsed', -1, JSON.stringify(doc))
     })
