@@ -1,7 +1,7 @@
-const yaml = require('js-yaml');
-const fs   = require('fs');
-const path = require('path');
-const doc = yaml.safeLoad(fs.readFileSync(path.join(GetResourcePath(GetCurrentResourceName()), 'config.yml'), 'utf8'))
+const { safeLoad } = require('js-yaml');
+const { readFileSynd } = require('fs');
+const { join } = require('path');
+const doc = safeLoad(readFileSync(join(GetResourcePath(GetCurrentResourceName()), 'config.yml'), 'utf8'))
 
 on('onResourceStart', async (resourceName) => {
     if (resourceName !== GetCurrentResourceName()) {
