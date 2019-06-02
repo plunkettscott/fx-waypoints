@@ -8,7 +8,7 @@ This script provides an easy way to create enter/exit teleportation markers in G
 
  2. `waypoints`
 
-    The waypoints section provides an object of points of interest that can be associated with teleporters. A waypoint can be assigned to only one teleporter currently, I plan to allow multiple teleporters per waypoint in the future.
+    The waypoints section provides an object of points of interest that can be associated with teleporters. A waypoint can be assigned to only one teleporter currently, I plan to allow multiple teleporters per waypoint in the future. Players may press the `INPUT_PICKUP` control (`E` on keyboard) to go to the associated teleporter.
 
  3. `teleporters`
 
