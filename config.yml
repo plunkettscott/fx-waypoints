@@ -1,0 +1,142 @@
+colors:
+  blue:
+    r: 30
+    g: 144
+    b: 255
+    alpha: 100
+
+#CITY OF PALETO BAY (PB<NAME>)
+#FORT ZANCUDO (FZ<NAME>)
+#FAR EAST (FE<NAME>)
+#TOWN OF GRAPESEED (GS<NAME>)
+#TOWN OF SANDY SHORES (SS<NAME>)
+#VILLAGE OF HARMONY (VH<NAME>)
+#CITY OF LOS SANTOS, AREA 26 (26<NAME>)
+
+waypoints:
+  PBbackalleybar:
+    name: Back Alley Bar - 1036 Paleto Blvd
+    to:
+      x: 1120.97
+      y: -3152.2
+      z: -37.06
+      
+  FEbunker:
+    name: Underground Bunker
+    to:
+      x: 892.63
+      y: -3245.87
+      z: -98.26 
+      
+  PBroomseven:
+    name: Room Number 7
+    to:
+      x: 151.53
+      y: -1007.73
+      z: -99
+      
+  FZhangar:
+    name: Aircraft Hangar
+    to:
+      x: -1267.2
+      y: -2970.02
+      z: -48.48 
+      
+  FEresidence1:
+    name: La Fuente Blanca - 5024 Senora Rd
+    to:
+      x: 1398.04
+      y: 1141.78
+      z: 114.33
+
+  GSboatshop:
+    name: Millars Boat Shop
+    to:
+      x: 1065.97
+      y: -3183.47
+      z: -39.17
+      
+  GSbackalleybar:
+    name: Back Alley Bar
+    to:
+      x: 997.04
+      y: -3158.02
+      z: -38.92
+
+  SSrestaurant:
+    name: Chinese Restaurant - 3006 Alhambra Dr
+    to:
+      x: 1906.03
+      y: 3711.83
+      z: 32.79
+      
+  SStractorshop:
+    name: Tractor Parts Office - 3032 Marina Dr
+    to:
+      x: 1088.75
+      y: -3187.95
+      z: -39.005
+
+teleporters:
+  - goto: PBbackalleybar
+    position:
+      x: -379.50
+      y: 6062.01
+      z: 31.50
+    color: blue
+    
+  - goto: FEbunker
+    position:
+      x: -389.29
+      y: 4340.23
+      z: 56.19
+    color: blue
+    
+  - goto: PBroomseven
+    position:
+      x: -697.78
+      y: 5763.87
+      z: 17.51
+    color: blue
+
+  - goto: FZhangar
+    position:
+      x: -2021.67
+      y: 3156.98
+      z: 32.81
+    color: blue
+    
+  - goto: FEresidence1
+    position:
+      x: 1393.58
+      y: 1141.7
+      z: 114.44
+    color: blue
+    
+  - goto: GSboatshop
+    position:
+      x: 1309.57
+      y: 4362.01
+      z: 41.54
+    color: blue
+    
+  - goto: GSbackalleybar
+    position:
+      x: 2471.58
+      y: 4110.67
+      z: 38.06
+    color: blue
+    
+  - goto: SSrestaurant
+    position:
+      x: 1907.68
+      y: 3709.65
+      z: 32.70
+    color: blue
+    
+  - goto: SStractorshop
+    position:
+      x: 387.47
+      y: 3585.11
+      z: 33.29
+    color: blue

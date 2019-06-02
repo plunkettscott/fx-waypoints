@@ -1,0 +1,12 @@
+{
+  "name": "waypoints",
+  "version": "0.0.1",
+  "description": "LESA Gaming Waypoints",
+  "main": "src/index.js",
+  "author": "Scott Plunkett <scottplunkett15@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "js-yaml": "^3.13.1"
+  }
+}
