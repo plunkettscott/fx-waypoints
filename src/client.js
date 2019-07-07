@@ -25,8 +25,8 @@ function getColor(key) {
 }
 
 function DisplayHelpText(str) {
-	SetTextComponentFormat("STRING")
-	AddTextComponentString(str)
+    SetTextComponentFormat("STRING")
+    AddTextComponentString(str)
     EndTextCommandDisplayHelp(0, 0, 1, -1)
 }
 
