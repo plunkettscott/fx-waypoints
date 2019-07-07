@@ -12,7 +12,7 @@ function getTeleporter(key) {
 
     return teleporters.filter((v) => {
         return v.goto === key
-    })[0]
+    })
 }
 
 function getColor(key) {
@@ -75,24 +75,28 @@ setTick(() => {
     })
 
     Object.keys(waypoints).forEach((waypointKey) => {
-        const { name, to } = waypoints[waypointKey]
-        const { position, color } = getTeleporter(waypointKey)
-        const waypointDistance = GetDistanceBetweenCoords(
-            playerCoords[0], playerCoords[1], playerCoords[2],
-            to.x, to.y, to.z, true
-        )
+        try {
+            const { name, to } = waypoints[waypointKey]
+            const { position, color } = getTeleporter(waypointKey)
+            const waypointDistance = GetDistanceBetweenCoords(
+                playerCoords[0], playerCoords[1], playerCoords[2],
+                to.x, to.y, to.z, true
+            )
 
-        if (waypointDistance <= 7.5) {
-            const co = getColor(color)
-            DrawMarker(1, to.x, to.y, to.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 0.8, 0.8, 0.8, co.r, co.g, co.b, co.alpha, false, true, 2, true, false, false, false)
+            if (waypointDistance <= 7.5) {
+                const co = getColor(color)
+                DrawMarker(1, to.x, to.y, to.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 0.8, 0.8, 0.8, co.r, co.g, co.b, co.alpha, false, true, 2, true, false, false, false)
 
-            if (waypointDistance <= 1.5) {
-                DisplayHelpText(`Press ~INPUT_PICKUP~ to Leave`)
+                if (waypointDistance <= 1.5) {
+                    DisplayHelpText(`Press ~INPUT_PICKUP~ to Leave`)
 
-                if (IsControlJustPressed(0, 153)) {    
-                    SetEntityCoords(PlayerPedId(), position.x, position.y, position.z)
+                    if (IsControlJustPressed(0, 153)) {    
+                        SetEntityCoords(PlayerPedId(), position.x, position.y, position.z)
+                    }
                 }
             }
+        } catch (e) {
+            console.log(waypointKey, getTeleporter(waypointKey))
         }
     })
 })
