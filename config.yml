@@ -23,6 +23,7 @@ waypoints:
       
   FEbunker:
     name: Underground Bunker
+    acceptsCars: true
     to:
       x: 892.63
       y: -3245.87
@@ -86,6 +87,7 @@ teleporters:
     color: blue
     
   - goto: FEbunker
+    acceptsCars: true
     position:
       x: -389.29
       y: 4340.23
