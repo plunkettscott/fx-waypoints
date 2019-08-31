@@ -52,7 +52,7 @@ setTick(() => {
     const { teleporters, waypoints } = waypointData
 
     teleporters.forEach((teleporter) => {
-        const { position, goto, color } = teleporter
+        const { position, goto, color, allowVehicles } = teleporter
         const teleporterDistance = GetDistanceBetweenCoords(
             playerCoords[0], playerCoords[1], playerCoords[2],
             position.x, position.y, position.z, true
@@ -68,7 +68,11 @@ setTick(() => {
                 if (IsControlJustPressed(0, 153)) {
                     const { to } = getWaypoint(goto)
     
-                    SetEntityCoords(PlayerPedId(), to.x, to.y, to.z)
+                    if (allowVehicles != null && allowVehicles == true && IsPedInAnyVehicle(PlayerPedId(), false)) {
+                        SetEntityCoords(GetVehiclePedIsIn(PlayerPedId(), false), to.x, to.y, to.z)
+                    } else {
+                        SetEntityCoords(PlayerPedId(), to.x, to.y, to.z)
+                    }
                 }
             }
         }
@@ -77,7 +81,7 @@ setTick(() => {
     Object.keys(waypoints).forEach((waypointKey) => {
         try {
             const { name, to } = waypoints[waypointKey]
-            const { position, color } = getTeleporter(waypointKey)
+            const { position, color, allowVehicles } = getTeleporter(waypointKey)
             const waypointDistance = GetDistanceBetweenCoords(
                 playerCoords[0], playerCoords[1], playerCoords[2],
                 to.x, to.y, to.z, true
@@ -90,8 +94,12 @@ setTick(() => {
                 if (waypointDistance <= 1.5) {
                     DisplayHelpText(`Press ~INPUT_PICKUP~ to Leave`)
 
-                    if (IsControlJustPressed(0, 153)) {    
-                        SetEntityCoords(PlayerPedId(), position.x, position.y, position.z)
+                    if (IsControlJustPressed(0, 153)) {
+                        if (allowVehicles != null && allowVehicles == true && IsPedInAnyVehicle(PlayerPedId(), false)) {
+                            SetEntityCoords(GetVehiclePedIsIn(PlayerPedId(), false), position.x, position.y, position.z)
+                        } else {
+                            SetEntityCoords(PlayerPedId(), position.x, position.y, position.z)
+                        }
                     }
                 }
             }
